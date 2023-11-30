@@ -14,7 +14,7 @@ interface WeatherHourlyForecastProps {
                 main: string;
                 description: string;
             }[];
-            name?: string; 
+            name?: string;
         }[];
     };
 }
@@ -24,7 +24,7 @@ interface WeatherHourlyForecastProps {
 const WeatherHourlyForecast: React.FC<WeatherHourlyForecastProps> = ({
     hourlyForecastData,
 }) => {
-    // Slice the array to keep only the first 6 items
+
     const hourlyForecastList = hourlyForecastData.list.slice(0, 6);
 
     return (
