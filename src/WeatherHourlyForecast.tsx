@@ -1,7 +1,5 @@
 // WeatherHourlyForecast.tsx
 import React from "react";
-import moment from "moment";
-import { WiDaySunny, WiRain, WiCloudy, WiDayCloudy } from "react-icons/wi";
 import HourlyWeatherCard from "./HourlyWeatherCard";
 import "./WeatherHourlyForecast.css";
 
@@ -16,39 +14,30 @@ interface WeatherHourlyForecastProps {
                 main: string;
                 description: string;
             }[];
-            name?: string; // Adding optional name property
+            name?: string; 
         }[];
     };
 }
 
-const getHourlyWeatherIcon = (weatherDescription: string) => {
-    switch (weatherDescription) {
-        case "Clear":
-            return <WiDaySunny size={32} />;
-        case "Rain":
-            return <WiRain size={32} />;
-        case "Clouds":
-            return <WiCloudy size={32} />;
-        default:
-            return <WiDayCloudy size={32} />;
-    }
-};
+
 
 const WeatherHourlyForecast: React.FC<WeatherHourlyForecastProps> = ({
     hourlyForecastData,
 }) => {
+    // Slice the array to keep only the first 6 items
+    const hourlyForecastList = hourlyForecastData.list.slice(0, 6);
+
     return (
         <div className="hourly-forecast-container">
             <div className="forecast-header">
                 <h2>Hourly Forecast</h2>
             </div>
             <div className="hourly-forecast-cards">
-                {hourlyForecastData.list.map((forecast) => (
+                {hourlyForecastList.map((forecast) => (
                     <div className="hourly-time" key={forecast.dt}>
                         <HourlyWeatherCard weatherData={{ ...forecast, name: forecast.name || '' }} showTime />
                     </div>
                 ))}
-
             </div>
         </div>
     );
