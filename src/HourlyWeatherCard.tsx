@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 import { WiDaySunny, WiRain, WiCloudy, WiDayCloudy } from "react-icons/wi";
-import "../styles/Weather.css";
+import "./Weather.css";
 
 interface HourlyWeatherCardProps {
   weatherData: {
