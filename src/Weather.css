@@ -154,3 +154,14 @@
 .app-container.dark .searchBtn {
   color: white;
 }
+
+.error {
+  display: flex;
+  margin-top: 7rem;
+  background: rgb(240, 113, 113);
+  align-content: center;
+  border-radius: 3.5rem;
+  position: absolute;
+  color: #000000;
+  font-size: 1rem;
+}
