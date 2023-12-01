@@ -17,12 +17,9 @@ const SearchBox: React.FC<SearchBoxProps> = ({ setCity }) => {
   const handleCitySubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Your OpenWeatherMap API key
-    const apiKey = "YOUR_API_KEY";
-
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
       );
 
       if (!response.ok) {
@@ -32,20 +29,21 @@ const SearchBox: React.FC<SearchBoxProps> = ({ setCity }) => {
       const data = await response.json();
 
       // Check if the API response contains a valid name property
-      if (data.name) {
+      if (data.name && data.sys && data.sys.country) {
         // City exists, update the state
-        setCity(city);
+        setCity(`${data.name}, ${data.sys.country}`);
         setCityValue("");
         setError("");
       } else {
         // City doesn't exist, show an error message
-        throw new Error(`City not found: ${data.message}`);
+        throw new Error(`City not found: ${city}`);
       }
     } catch (error: any) {
       // Handle errors
       setError(error.message);
     }
   };
+
   return (
     <form onSubmit={handleCitySubmit} className="search-box">
       <FiSearch />
