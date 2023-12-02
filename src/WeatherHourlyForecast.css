@@ -1,5 +1,6 @@
 .hourly-forecast-container {
   width: 100%;
+  overflow: hidden;
 }
 
 .forecast-header h2 {
@@ -11,7 +12,9 @@
 .hourly-forecast-cards {
   display: flex;
   gap: 10px;
-  }
+  overflow-x: auto;
+  margin-bottom: -17px;
+}
 
 .hourly-time {
   flex: 1;
