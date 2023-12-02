@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:800i&display=swap');
 
 body {
+  width: auto;
   margin: 0;
   padding: 0;
   background-color: black;
@@ -322,6 +323,7 @@ p.morning {
 }
 
 .app-container {
+  width: auto;
   position: relative;
   color: #fbe4d8;
   max-width: 100%;
