@@ -27,10 +27,14 @@
 
 .other-info {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* Responsive columns with minmax */
   grid-template-rows: repeat(2, auto);
   gap: 1rem;
   justify-content: center;
+  max-width: 100%;
+  /* Ensure the container doesn't overflow */
+  margin: 0 auto;
 }
 
 .other-info>div {
@@ -179,5 +183,17 @@
     border-radius: .7rem;
   }
 
-  
+  .other-info {
+    gap: 0.5rem;
+    grid-template-columns: repeat(2, minmax(70%, 1fr));
+    margin: 2rem;
+  }
+
+  .weather-card {
+    width: 100%;
+  }
+
+  .weather-container {
+    width: 100%;
+  }
 }
