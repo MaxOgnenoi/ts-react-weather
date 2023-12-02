@@ -165,3 +165,19 @@
   color: #000000;
   font-size: 1rem;
 }
+
+@media only screen and (max-width: 600px) {
+  .other-info>div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.2rem;
+    border: solid .05rem white;
+    border-radius: .7rem;
+  }
+
+  
+}
