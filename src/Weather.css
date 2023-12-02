@@ -1,5 +1,5 @@
 .weather-card {
-    color: #faf2ed;
+  color: #faf2ed;
   padding: 10px;
   text-align: center;
   font-size: 1rem;
@@ -28,10 +28,11 @@
 
 .other-info {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
   gap: 1rem;
-  max-width: calc(100% - 2rem);
-  margin: 0 auto;
+  width: 100%;
+  max-width: 700px;
 }
 
 .other-info>div {
@@ -169,7 +170,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-  
+
 
   .weather-card {
     width: 100%;
