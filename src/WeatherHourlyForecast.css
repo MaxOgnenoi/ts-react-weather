@@ -50,3 +50,19 @@
 .weather-info {
   margin: 0;
 }
+
+@media only screen and (max-width: 600px) {
+  .forecast-header h2 {
+    font-size: 2rem;
+  }
+
+  .hourly-temperature,
+  .weather-card {
+    font-size: 1rem;
+  }
+
+  .icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
