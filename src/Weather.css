@@ -185,7 +185,7 @@
 
   .other-info {
     gap: 0.5rem;
-    grid-template-columns: repeat(2, minmax(70%, 1fr));
+    grid-template-columns: repeat(2, minmax(50%, 1fr));
     margin: 2rem;
   }
 
